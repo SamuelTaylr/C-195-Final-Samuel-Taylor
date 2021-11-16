@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="265.0" prefWidth="272.0" style="-fx-background-color: grey; -fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <Button fx:id="mainScreenAppointmentsButton" layoutX="36.0" layoutY="27.0" mnemonicParsing="false" onAction="#mainScreenAppointmentsButtonHandler" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: black;" text="Appointments">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="mainScreenLogoutButton" layoutX="36.0" layoutY="190.0" mnemonicParsing="false" onAction="#mainScreenLogoutButtonHandler" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: black;" text="Logout">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="mainScreenReportsButton" layoutX="36.0" layoutY="135.0" mnemonicParsing="false" onAction="#mainScreenReportsButtonHandler" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: black;" text="Reports">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="mainScreenCustomersButton" layoutX="36.0" layoutY="80.0" mnemonicParsing="false" onAction="#mainScreenCustomersButtonHandler" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: black;" text="Customers">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

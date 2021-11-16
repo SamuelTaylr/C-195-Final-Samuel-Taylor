@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="975.0" style="-fx-background-color: grey; -fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentController">
+    <children>
+        <TableView fx:id="appointmentTableview" layoutX="16.0" layoutY="371.0" onMouseClicked="#mouseClickOnTableView" prefHeight="340.0" prefWidth="944.0" style="-fx-border-color: black;">
+            <columns>
+                <TableColumn fx:id="appointmentId" prefWidth="53.0" text="Appt. ID" />
+                <TableColumn fx:id="appointmentTitle" minWidth="0.0" prefWidth="90.0" text="Title" />
+                <TableColumn fx:id="appointmentDescription" minWidth="0.0" prefWidth="94.0" text="Desc." />
+                <TableColumn fx:id="appointmentType" minWidth="0.0" prefWidth="87.0" text="Type" />
+                <TableColumn fx:id="appointmentLocation" minWidth="0.0" prefWidth="84.0" text="Location" />
+                <TableColumn fx:id="appointmentContact" prefWidth="81.0" text="Contact" />
+                <TableColumn fx:id="appointmentStart" prefWidth="144.0" text="Start" />
+                <TableColumn fx:id="appointmentEnd" minWidth="0.0" prefWidth="164.0" text="End" />
+                <TableColumn fx:id="appointmentCustomerId" minWidth="0.0" prefWidth="79.0" text="Cust. ID" />
+            <TableColumn fx:id="appointmentUserId" prefWidth="66.0" text="User ID" />
+            </columns>
+        </TableView>
+        <Button fx:id="addAppointmentButton" layoutX="16.0" layoutY="314.0" mnemonicParsing="false" onAction="#addAppointmentButtonHandler" style="-fx-border-color: black;" text="Add Appointment" />
+        <Button fx:id="deleteAppointmentButton" layoutX="263.0" layoutY="314.0" mnemonicParsing="false"  style="-fx-border-color: black;" text="Delete Appointment" />
+        <Button fx:id="appointmentsBackButton" layoutX="906.0" layoutY="314.0" mnemonicParsing="false" onAction="#appointmentsBackButtonHandler" prefHeight="25.0" prefWidth="54.0" style="-fx-border-color: black;" text="Back" />
+        <TitledPane animated="false" layoutX="16.0" layoutY="20.0" prefHeight="269.0" prefWidth="944.0" text="Appointment Details">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="771.0">
+                    <children>
+                        <TextField fx:id="appointmentIdField" layoutX="170.0" layoutY="30.0" prefHeight="27.0" prefWidth="196.0" />
+                        <Label layoutX="70.0" layoutY="35.0" text="Appointment ID" />
+                        <TextField fx:id="appointmentTitleField" layoutX="170.0" layoutY="66.0" prefHeight="27.0" prefWidth="196.0" />
+                        <Label layoutX="133.0" layoutY="71.0" text="Title" />
+                        <TextField fx:id="appointmentDescriptionField" layoutX="170.0" layoutY="103.0" prefHeight="27.0" prefWidth="196.0" />
+                        <Label layoutX="95.0" layoutY="108.0" text="Description" />
+                        <TextField fx:id="appointmentLocationField" layoutX="170.0" layoutY="141.0" prefHeight="27.0" prefWidth="196.0" />
+                        <Label layoutX="110.0" layoutY="146.0" text="Location" />
+                        <TextField fx:id="appointmentTypeField" layoutX="170.0" layoutY="178.0" prefHeight="27.0" prefWidth="196.0" />
+                        <Label layoutX="120.0" layoutY="183.0" text="Type" />
+                        <DatePicker fx:id="startDateBox" layoutX="499.0" layoutY="31.0" prefHeight="25.0" prefWidth="89.0" />
+                        <Label layoutX="419.0" layoutY="35.0" text="Starting Date" />
+                        <Label layoutX="486.0" layoutY="71.0" text="Starting Time" />
+                        <ComboBox fx:id="appointmentCustomerIdBox" layoutX="582.0" layoutY="178.0" prefHeight="27.0" prefWidth="195.0" />
+                        <Label layoutX="490.0" layoutY="108.0" text="Ending Time" />
+                        <Label layoutX="489.0" layoutY="184.0" text="Customer ID" />
+                  <ComboBox fx:id="startTimeBoxHour" layoutX="582.0" layoutY="66.0" prefHeight="27.0" prefWidth="86.0" />
+                  <ComboBox fx:id="endTimeBoxHour" layoutX="582.0" layoutY="103.0" prefHeight="27.0" prefWidth="86.0" />
+                  <Label layoutX="495.0" layoutY="143.0" text="Contact ID" />
+                  <ComboBox fx:id="appointmentsContactIdBox" layoutX="582.0" layoutY="138.0" prefHeight="27.0" prefWidth="195.0" />
+                  <Label layoutX="600.0" layoutY="35.0" text="User ID" />
+                  <ComboBox fx:id="userIdBox" layoutX="650.0" layoutY="30.0" prefHeight="27.0" prefWidth="126.0" />
+                  <ComboBox fx:id="startTimeBoxMinute" layoutX="691.0" layoutY="66.0" prefHeight="27.0" prefWidth="86.0" />
+                  <ComboBox fx:id="endTimeBoxMinute" layoutX="691.0" layoutY="103.0" prefHeight="27.0" prefWidth="86.0" />
+                  <Label layoutX="800.0" layoutY="71.0" text="Business Hours Are" />
+                  <Label layoutX="812.0" layoutY="95.0" text="0800-2200 EST" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+      <RadioButton fx:id="appointmentMonthViewRadioButton" layoutX="515.0" layoutY="319.0" mnemonicParsing="false" text="Month View" />
+      <RadioButton fx:id="appointmentWeekViewRadioButton" layoutX="625.0" layoutY="319.0" mnemonicParsing="false" text="Weekly View" />
+      <RadioButton fx:id="appointmentAllViewRadioButton" layoutX="737.0" layoutY="319.0" mnemonicParsing="false" text="View All Appointments" />
+      <Button layoutX="140.0" layoutY="314.0" mnemonicParsing="false" onAction="#saveAppointmentButtonHandler" prefHeight="27.0" prefWidth="114.0" style="-fx-border-color: black;" text="Save Changes" />
+      <Button layoutX="396.0" layoutY="314.0" mnemonicParsing="false" onAction="#refreshButtonHandler" style="-fx-border-color: black;" text="Refresh Table" />
+    </children>
+</AnchorPane>

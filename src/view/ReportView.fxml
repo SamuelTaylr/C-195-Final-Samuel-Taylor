@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="515.0" prefWidth="973.0" style="-fx-background-color: grey; -fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
+    <children>
+        <Button fx:id="reportBackButton" layoutX="904.0" layoutY="467.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" style="-fx-border-color: black;" text="Back" />
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="445.0" prefWidth="945.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="All Appointments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="849.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <TableView fx:id="reportAppointmentTableView" layoutX="8.0" layoutY="142.0" prefHeight="265.0" prefWidth="929.0">
+                          <columns>
+                            <TableColumn fx:id="reportAppointmentId" prefWidth="105.0" text="ID" />
+                            <TableColumn fx:id="reportAppointmentTitle" prefWidth="83.0" text="Title" />
+                              <TableColumn fx:id="reportAppointmentDescription" prefWidth="85.0" text="Desc" />
+                              <TableColumn fx:id="reportAppointmentType" prefWidth="97.0" text="Type" />
+                              <TableColumn fx:id="reportAppointmentLocation" prefWidth="132.0" text="Location" />
+                              <TableColumn fx:id="reportAppointmentContact" prefWidth="58.0" text="Contact" />
+                              <TableColumn fx:id="reportAppointmentStart" prefWidth="53.0" text="Start " />
+                              <TableColumn fx:id="reportAppointmentEnd" prefWidth="63.0" text="End" />
+                              <TableColumn fx:id="reportAppointmentCustomerId" prefWidth="141.0" text="Cust. ID" />
+                              <TableColumn fx:id="reportAppointmentUserId" prefWidth="111.0" text="User ID" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="reportAppointmentsContactBox" layoutX="141.0" layoutY="57.0" prefHeight="25.0" prefWidth="179.0" />
+                        <Label layoutX="76.0" layoutY="61.0" text="Contacts" />
+                        <Label layoutX="141.0" layoutY="24.0" text="Appointments For Each Contact" />
+                        <ComboBox fx:id="reportAppointmentTypeComboBox" layoutX="629.0" layoutY="57.0" prefHeight="25.0" prefWidth="179.0" />
+                        <Label layoutX="629.0" layoutY="24.0" text="Appointments For Each Type" />
+                        <Label layoutX="557.0" layoutY="61.0" text="Appt. Type" />
+                        <Button fx:id="appointmentsForContactsButton" layoutX="141.0" layoutY="97.0" mnemonicParsing="false"  text="Update For Contacts" />
+                        <Button layoutX="629.0" layoutY="97.0" mnemonicParsing="false" onAction="#reportUpdateTypeButton" text="Update for Type" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Customers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="509.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <TableView fx:id="reportCustomerTableView" layoutX="7.0" prefHeight="409.0" prefWidth="929.0">
+                          <columns>
+                            <TableColumn fx:id="reportCustomerId" prefWidth="113.0" text="ID" />
+                            <TableColumn fx:id="reportCustomerName" prefWidth="132.0" text="Name" />
+                              <TableColumn fx:id="reportCustomerAddress" prefWidth="126.0" text="Address" />
+                              <TableColumn fx:id="reportCustomerPostalCode" prefWidth="138.0" text="Postal Code" />
+                              <TableColumn fx:id="reportCustomerDivision" prefWidth="82.0" text="State/Province" />
+                              <TableColumn fx:id="reportCustomerCountry" prefWidth="162.0" text="Country" />
+                              <TableColumn fx:id="reportCustomerPhone" prefWidth="175.0" text="Phone" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Contacts">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="509.0" style="-fx-background-color: lightgrey;">
+                        <children>
+                            <TableView fx:id="reportContactTableView" layoutX="7.0" prefHeight="409.0" prefWidth="929.0">
+                                <columns>
+                                    <TableColumn fx:id="reportContactId" prefWidth="113.0" text="Contact ID" />
+                                    <TableColumn fx:id="reportContactName" prefWidth="393.0" text="Name" />
+                                    <TableColumn fx:id="reportContactEmail" prefWidth="422.0" text="Contact Email" />
+                                </columns>
+                            </TableView>
+                        </children></AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Totals">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="509.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <Label layoutX="598.0" layoutY="17.0" text="Total Number of Appointments by Month" />
+                        <Label fx:id="reportTotalsMonthLabel" layoutX="116.0" layoutY="18.0" text="Total Number of Appointments by Type" />
+                        <TableView fx:id="totalMonthTableView" layoutX="504.0" layoutY="48.0" prefHeight="358.0" prefWidth="426.0">
+                          <columns>
+                            <TableColumn fx:id="totalMonth" prefWidth="206.0" text="Month" />
+                            <TableColumn fx:id="totalMonthNumber" prefWidth="233.0" text="# of Appointments" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="totalTypeTableView" layoutX="16.0" layoutY="48.0" prefHeight="358.0" prefWidth="426.0">
+                           <columns>
+                              <TableColumn fx:id="totalType" prefWidth="206.0" text="Type" />
+                              <TableColumn fx:id="totalTypeNumber" prefWidth="233.0" text="# of Appointments" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
